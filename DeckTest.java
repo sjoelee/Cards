@@ -16,5 +16,6 @@ public class DeckTest {
         typDeck.peekTop();
         Card c = typDeck.dealCard();
         typDeck.peekTop();
+        System.out.println(typDeck.getNumCardsLeft());
     }
 }

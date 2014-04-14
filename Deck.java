@@ -14,31 +14,27 @@ public class Deck {
     private int upperBound;
     private int numCardsPerSuit;
     private ArrayList<Suit> arrSuit;
-    private Card[] arrCard;
-    private List<Card> arrCardList;
+    private ArrayList<Card> arrCard;
 
     public Deck (int numSuits, int numCardsPerSuit, String[] names) {
         arrSuit = new ArrayList<Suit>();
+        arrCard = new ArrayList<Card>();
         int idx;
 
-        /* Set instance variables and create local array of reference vars
-         * to deck of cards */
+        /* 
+         * Set instance variables and create local array of reference vars
+         * to deck of cards 
+         */
         setNumSuits(numSuits);
         setNumCardsPerSuit(numCardsPerSuit);
-        arrCard = new Card[numCards];
         int cardCount = 0;
         for (idx = 0; idx < numSuits; idx++) {
             arrSuit.add(new Suit(names[idx], numCardsPerSuit));
             for (Card c : arrSuit.get(idx).getCards()) {
-                arrCard[cardCount] = c;
+                arrCard.add(c);
                 cardCount++;
             }
         }
-        /* IMPORTANT: This does not create another ArrayList, but uses 
-         * java.util.Array.ArrayList (not java.util.ArrayList) and creates a
-         * list view of the original array. Hence return type is List. NEAT!
-         */
-        arrCardList = Arrays.asList(arrCard);
     }
 
     public void setNumCardsPerSuit (int numCardsPerSuit) {
@@ -59,7 +55,14 @@ public class Deck {
     }
 
     public Card dealCard () {
-        return arrCardList.remove(0);
+        if (this.numCards > 0) {
+            this.numCards--;
+        }
+        return arrCard.remove(0);
+    }
+
+    public int getNumCardsLeft () {
+        return this.numCards;
     }
 
     public void printDeck () {
@@ -74,11 +77,11 @@ public class Deck {
      */
 
     public void peekTop () {
-        Card c = arrCardList.get(0);
+        Card c = arrCard.get(0);
         System.out.println("Top of deck: " + c.getSuitName() + " " + c.getVal());
     }
 
     public void shuffle () {
-        Collections.shuffle(arrCardList);
+        Collections.shuffle(arrCard);
     }
 }
