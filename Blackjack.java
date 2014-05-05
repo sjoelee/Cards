@@ -8,7 +8,14 @@
  * - have a goal value 
  * - allowable moves
  */
-public class Blackjack implements CardGame {
+
+import java.util.*;
+//public class Blackjack implements CardGame {
+public class Blackjack {
     /* Possible moves */
-    
+    private ArrayList<String> moves;
+    public Blackjack() {
+        moves.add("hit");
+        moves.add("pass");
+    }
 }
