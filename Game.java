@@ -8,7 +8,8 @@
  * 3. 
  */
 public interface Game <T extends Card>{
-    public void setInitNum(int number);
+    public void setDeck(Deck d);
+    public T[] getInitHand(int number);
     public void setGoalValue(int value);
     public void setSpecialValues(T[], int[] values);
     public int getCurrentValue();

@@ -12,4 +12,12 @@
 import java.util.*;
 //public class Blackjack implements CardGame {
 public class Blackjack extends Game<Card>{
+    private Deck gameDeck;//access to global set of cards. Should only be one deck for the game.
+    private ArrayList<Card> hand = null;
+    public void setDeck(Deck d) {
+        gameDeck = d;
+    }
+    public void getInitHand(int number) {
+        hand = new ArrayList<Card>(Arrays.asList(d.getHand(number));
+    }
 }
