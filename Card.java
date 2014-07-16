@@ -1,17 +1,20 @@
 public class Card {
     private int val;
-    private String suitName;
+    private Suit suit;
 
-    public Card (int val, String suitName) {
+    public Card (int val, Suit suit) {
         this.val = val;
-        this.suitName = suitName;
+        this.suit = suit;
     }
 
-    public String getSuitName () {
-        return this.suitName;
+    public String getSuit () {
+        return this.suit;
     }
 
     public int getVal () {
         return this.val;
+    }
+
+    public void setSpecialValues() {
     }
 }

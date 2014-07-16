@@ -14,6 +14,7 @@ import java.util.*;
 public class Blackjack {
     /* Possible moves */
     private ArrayList<String> moves;
+
     public Blackjack() {
         moves.add("hit");
         moves.add("pass");
