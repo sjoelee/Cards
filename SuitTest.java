@@ -1,14 +1,9 @@
-import java.io.IOException;
-
 public class SuitTest {
     public static void main (String [] args) {
-        Suit s = new Suit("", 13);
-        s.printCards();
-        s = new Suit("Clubs", 13);
-        s.printCards();
-        s = new Suit("Clubs", 0);
-        s.printCards();
-        s = new Suit("Hearts", 13);
-        s.printCards();
+        System.out.println(Suit.getSuitFromValue(0));
+        System.out.println(Suit.getSuitFromValue(1));
+        System.out.println(Suit.getSuitFromValue(2));
+        System.out.println(Suit.getSuitFromValue(3));
+        System.out.println(Suit.getSuitFromValue(4));
     }
 }
